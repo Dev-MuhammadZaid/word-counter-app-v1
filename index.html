@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Word Counter</title>
+      <style>
+            body{
+                  background-color: lightcyan;
+            }
+            :root{
+                  --bgcolor: #fff;
+                  --color: blue;
+                  --bd-color: lightblue;
+                  --radius: 12px;
+                  --radius-mini: 5px;
+                  --pad: 10px;
+                  --shadow: 0 3px 10px rgba(0, 0, 255, .1),0 6px 10px rgba(0, 0, 0, .2);
+            }
+            .main-word-counter-container{
+                  width: 300px;
+                  height: 400px;
+                  background-color: var(--bgcolor);
+                  box-shadow: var(--shadow);
+                  border-radius: var(--radius);
+                  margin: 20px auto;
+                  padding: var(--pad);
+                  box-sizing: border-box;
+                  font-family: 'Inter', Arial, Helvetica, sans-serif;
+                  text-transform: capitalize;
+                  text-align: center;
+            }
+            .main-word-counter-container>p{
+                  font-size: .7em;
+                  color: lightslategrey;
+            }
+            .main-word-counter-container textarea{
+                  resize: none;
+                  padding: 30px;
+                  display: flex;
+                  justify-self: center;
+                  width: 200px;
+                  text-align: center;
+                  border: 1px solid lightblue;
+                  outline: none;
+                  box-shadow: 0 3px 10px rgba(0, 0, 0, .1),0 6px 10px rgba(0, 0, 0, .2);
+                  border-radius: var(--radius);
+            }
+            .main-word-counter-container textarea:focus{
+                  outline: 1px solid blue;
+            }
+            .main-word-counter-container .data-show{
+                  margin: 10px;
+                  padding: 10px;
+            }
+            .main-word-counter-container .data-show>p{
+                  display: flex;
+                  justify-content: space-between;
+                  padding: var(--pad);
+                  border-bottom: 1px solid #000;
+            }
+            .main-word-counter-container .data-show>p>span{
+                  font-weight: 700;
+            }
+      </style>
+</head>
+<body>
+      <div class="main-word-counter-container">
+            <h3>word counter app</h3>
+            <p>Count words, characters & spaces in real time</p>
+            <textarea  placeholder="Enter or paste your text"></textarea>
+      <div class="data-show">
+            <p>charecters<span class="total-char">0</span></p>
+            <p>words<span class="word-count">0</span></p>
+            <p>spaces<span class="spaces">0</span></p>
+      </div>
+      </div>
+              <script>
+let charecters = document.querySelector('.total-char');
+let words = document.querySelector('.word-count');
+let spaces = document.querySelector('.spaces');
+let inp = document.querySelector('textarea');
+inp.addEventListener('input',() => {
+     charecters.innerHTML = inp.value.length;
+     words.innerHTML = inp.value.split(' ').length;
+     spaces.innerHTML = inp.value.split(' ').length -1;
+})
+</script>
+</body>
+</html>
