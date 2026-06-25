@@ -79,11 +79,11 @@
 let charecters = document.querySelector('.total-char');
 let words = document.querySelector('.word-count');
 let spaces = document.querySelector('.spaces');
-let inp = document.querySelector('textarea').value.trim();
+let inp = document.querySelector('textarea');
 inp.addEventListener('input',() => {
      charecters.innerHTML = inp.value.length;
-     words.innerHTML = inp.split(' ').length;
-     spaces.innerHTML = inp.split(' ').length -1;
+     words.innerHTML = inp.value.split(' ').length;
+     spaces.innerHTML = inp.value.split(' ').length -1;
 })
 </script>
 </body>
